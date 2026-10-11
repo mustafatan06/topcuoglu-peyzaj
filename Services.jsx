@@ -2,16 +2,16 @@ import React, { useState, useEffect } from 'react';
 
 export default function Services() {
   const defaultServices = [
-    { title: "Peyzaj Düzenleme", category: "TASARIM & UYGULAMA", image: "https://images.unsplash.com/photo-1558904541-efa873a819ab?q=80&w=800&auto=format&fit=crop" },
-    { title: "Bahçe Bakımı", category: "PERİYODİK BAKIM", image: "https://images.unsplash.com/photo-1584467735811-628a8d3e23f0?q=80&w=800&auto=format&fit=crop" },
-    { title: "İlaçlama", category: "HAŞERE & BİTKİ SAĞLIĞI", image: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=800&auto=format&fit=crop" },
-    { title: "Ağaç Budama", category: "FORM & GÜVENLİK", image: "https://images.unsplash.com/photo-1542382257-80dedb725088?q=80&w=800&auto=format&fit=crop" },
-    { title: "Mikrobiyal Gübre", category: "CANLI TOPRAK", image: "https://images.unsplash.com/photo-1592417817098-8f3d691a4bf5?q=80&w=800&auto=format&fit=crop" },
-    { title: "Kanalizasyon Temizliği", category: "ALTYAPI & VİDANJÖR", image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800&auto=format&fit=crop" },
-    { title: "Çatı & Oluk Temizliği", category: "YAPI KORUMA", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" },
-    { title: "Temizlik Hizmetleri", category: "GENEL TEMİZLİK", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" },
-    { title: "Ofis Temizliği", category: "KURUMSAL HİZMET", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" },
-    { title: "İnşaat Temizliği", category: "İNŞAAT SONRASI", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" }
+    { title: "Peyzaj Düzenleme", category: "TASARIM & UYGULAMA", image: "https://static.wixstatic.com/media/..." }, // Kendi görsel linklerin
+    { title: "Bahçe Bakımı", category: "PERİYODİK BAKIM", image: "https://static.wixstatic.com/media/..." },
+    { title: "İlaçlama", category: "HAŞERE & BİTKİ SAĞLIĞI", image: "https://static.wixstatic.com/media/..." },
+    { title: "Ağaç Budama", category: "FORM & GÜVENLİK", image: "https://static.wixstatic.com/media/..." },
+    { title: "Mikrobiyal Gübre", category: "CANLI TOPRAK", image: "https://static.wixstatic.com/media/..." },
+    { title: "Kanalizasyon Temizliği", category: "ALTYAPI & VİDANJÖR", image: "https://static.wixstatic.com/media/..." },
+    { title: "Çatı & Oluk Temizliği", category: "YAPI KORUMA", image: "https://static.wixstatic.com/media/..." },
+    { title: "Temizlik Hizmetleri", category: "GENEL TEMİZLİK", image: "https://static.wixstatic.com/media/..." },
+    { title: "Ofis Temizliği", category: "KURUMSAL HİZMET", image: "https://static.wixstatic.com/media/..." },
+    { title: "İnşaat Temizliği", category: "İNŞAAT SONRASI", image: "https://static.wixstatic.com/media/..." }
   ];
 
   const [adminItems, setAdminItems] = useState([]);
@@ -23,7 +23,6 @@ export default function Services() {
     }
   }, []);
 
-  // Admin panelinden eklenenler varsa başa eklenir
   const allServices = [...adminItems, ...defaultServices];
 
   return (
@@ -34,12 +33,12 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Kesinlikle taşmayan, tüm ekranlarda aynı boyutta kilitlenmiş esnek grid yapısı */}
+      {/* Hiçbir istisna bırakmadan tüm kartları aspect-[16/10] yatay dikdörtgen ve eşit boyuta kilitledik */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-full">
         {allServices.map((service, index) => (
           <div 
             key={index} 
-            className="group relative overflow-hidden rounded-xl shadow-md bg-zinc-900 aspect-[4/3] w-full"
+            className="group relative overflow-hidden rounded-xl shadow-md bg-zinc-900 aspect-[16/10] w-full"
           >
             <img 
               src={service.image} 
