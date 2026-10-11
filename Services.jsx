@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function Services() {
   const defaultServices = [
-    { title: "Peyzaj Düzenleme", category: "TASARIM & UYGULAMA", image: "https://static.wixstatic.com/media/..." }, // Kendi görsel linklerin
+    { title: "Peyzaj Düzenleme", category: "TASARIM & UYGULAMA", image: "https://static.wixstatic.com/media/..." },
     { title: "Bahçe Bakımı", category: "PERİYODİK BAKIM", image: "https://static.wixstatic.com/media/..." },
     { title: "İlaçlama", category: "HAŞERE & BİTKİ SAĞLIĞI", image: "https://static.wixstatic.com/media/..." },
     { title: "Ağaç Budama", category: "FORM & GÜVENLİK", image: "https://static.wixstatic.com/media/..." },
@@ -33,8 +33,8 @@ export default function Services() {
         </p>
       </div>
 
-      {/* Hiçbir istisna bırakmadan tüm kartları aspect-[16/10] yatay dikdörtgen ve eşit boyuta kilitledik */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 w-full max-w-full">
+      {/* "Tüm Hizmetler" sayfasındaki gibi tam 3 sütunlu simetrik yapı */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full max-w-full">
         {allServices.map((service, index) => (
           <div 
             key={index} 
@@ -45,11 +45,11 @@ export default function Services() {
               alt={service.title} 
               className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-4 flex flex-col justify-end">
-              <span className="text-[11px] text-amber-400 font-semibold uppercase tracking-wider mb-0.5">
+            <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-end">
+              <span className="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">
                 {service.category}
               </span>
-              <h3 className="font-bold text-white text-base md:text-lg">
+              <h3 className="font-bold text-white text-lg md:text-xl">
                 {service.title}
               </h3>
             </div>
