@@ -5,7 +5,7 @@ export default function Services() {
     {
       title: "Peyzaj Düzenleme",
       category: "TASARIM & UYGULAMA",
-      image: "https://static.wixstatic.com/media/...", // Mevcut görsel linklerin
+      image: "https://static.wixstatic.com/media/...", // Kendi görsel linklerin
     },
     {
       title: "Bahçe Bakımı",
@@ -62,8 +62,9 @@ export default function Services() {
         </p>
       </div>
 
-      {/* 3 Sütunlu kusursuz eşit yapı: Tüm kutular aynı yatay (aspect-[16/10] veya benzeri) oranda kilitlendi */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      {/* 4 Sütunlu (veya ekran boyutuna göre değişen) standart Grid yapısı */}
+      {/* Tüm öğeler 'col-span-1' ve 'aspect-[16/10]' ile aynı boyutta kilitlendi */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6">
         {servicesList.map((service, index) => (
           <div 
             key={index} 
