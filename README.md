@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Base44 Project
 
 Use this repository to run and edit the app locally, then publish changes back through Base44.
@@ -60,3 +61,6 @@ GitHub integration: [https://docs.base44.com/developers/app-code/local-developme
 Local development: [https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview](https://docs.base44.com/developers/backend/overview/local-dev/local-development-overview)
 
 Support: [https://app.base44.com/support](https://app.base44.com/support)
+=======
+# topcuoglu-peyzaj
+>>>>>>> 4471e9e02a85fb98fb286e04d75989cc2899da4e
