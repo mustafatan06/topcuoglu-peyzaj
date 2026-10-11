@@ -1,0 +1,20 @@
+/* WIX VEYA BASE44 ASİMETRİK ŞABLONLARINI KÖKTEN EZEN KESİN KURAL */
+section div[class*="grid"] > div, 
+main div[class*="grid"] > div,
+div[class*="grid"] > div {
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
+  aspect-ratio: 16 / 10 !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* Görsellerin asla kırpılmadan ve taşmadan kutuya tam oturmasını sağlar */
+section div[class*="grid"] img, 
+main div[class*="grid"] img,
+div[class*="grid"] img {
+  object-fit: cover !important;
+  object-position: center !important;
+  width: 100% !important;
+  height: 100% !important;
+}
