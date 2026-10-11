@@ -146,23 +146,3 @@
     transform: translateY(0);
   }
 }
-/* --- WIX / BASE44 ASİMETRİK KUTULARINI KÖKTEN EZEN VE EŞİTLEYEN KESİN KURAL --- */
-.grid > div, 
-section div[class*="grid"] > div, 
-main div[class*="grid"] > div {
-  grid-column: span 1 !important;
-  grid-row: span 1 !important;
-  aspect-ratio: 16 / 10 !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-/* Görsellerin asla kırpılmadan ve taşmadan kutuya tam oturmasını sağlar */
-.grid img, 
-section div[class*="grid"] img, 
-main div[class*="grid"] img {
-  object-fit: cover !important;
-  object-position: center !important;
-  width: 100% !important;
-  height: 100% !important;
-}
