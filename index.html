@@ -1,64 +1,37 @@
-import React, { useState, useEffect } from 'react';
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://base44.com/logo_v2.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+    <link rel="manifest" href="/manifest.json" />
+    
+    <!-- SEO Optimizasyonu -->
+    <title>Topçuoğlu Peyzaj | Ankara Peyzaj Tasarımı ve Bahçe Bakımı</title>
+    <meta
+      name="description"
+      content="Topçuoğlu Peyzaj — Ankara'da peyzaj düzenleme, bahçe bakımı, ilaçlama, ağaç budama, kanalizasyon temizliği, mikrobiyal gübre ve temizlik hizmetleri. Ücretsiz keşif için 0537 319 37 66."
+    />
+    <meta name="keywords" content="Ankara peyzaj, bahçe bakımı Ankara, peyzaj tasarımı, ağaç budama, çim ekimi, Topçuoğlu Peyzaj" />
+    <meta name="author" content="Topçuoğlu Peyzaj" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#1B2621" />
 
-export default function Home() {
-  const defaultServices = [
-    { title: "Peyzaj Düzenleme", category: "TASARIM & UYGULAMA", image: "https://images.unsplash.com/photo-1558904541-efa873a819ab?q=80&w=800&auto=format&fit=crop" },
-    { title: "Bahçe Bakımı", category: "PERİYODİK BAKIM", image: "https://images.unsplash.com/photo-1584467735811-628a8d3e23f0?q=80&w=800&auto=format&fit=crop" },
-    { title: "İlaçlama", category: "HAŞERE & BİTKİ SAĞLIĞI", image: "https://images.unsplash.com/photo-1628352081506-83c43123ed6d?q=80&w=800&auto=format&fit=crop" },
-    { title: "Ağaç Budama", category: "FORM & GÜVENLİK", image: "https://images.unsplash.com/photo-1542382257-80dedb725088?q=80&w=800&auto=format&fit=crop" },
-    { title: "Mikrobiyal Gübre", category: "CANLI TOPRAK", image: "https://images.unsplash.com/photo-1592417817098-8f3d691a4bf5?q=80&w=800&auto=format&fit=crop" },
-    { title: "Kanalizasyon Temizliği", category: "ALTYAPI & VİDANJÖR", image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?q=80&w=800&auto=format&fit=crop" },
-    { title: "Çatı & Oluk Temizliği", category: "YAPI KORUMA", image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=800&auto=format&fit=crop" },
-    { title: "Temizlik Hizmetleri", category: "GENEL TEMİZLİK", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" },
-    { title: "Ofis Temizliği", category: "KURUMSAL HİZMET", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" },
-    { title: "İnşaat Temizliği", category: "İNŞAAT SONRASI", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=800&auto=format&fit=crop" }
-  ];
+    <!-- Open Graph (Sosyal Medya ve WhatsApp Paylaşım Uyumlu) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:title" content="Topçuoğlu Peyzaj | Yaşam Alanlarınıza Değer Katıyoruz" />
+    <meta
+      property="og:description"
+      content="Estetik tasarım, kusursuz uygulama. Peyzaj düzenleme, bahçe bakımı, ilaçlama ve altyapı hizmetlerinde profesyonel çözümler."
+    />
+    <meta property="og:site_name" content="Topçuoğlu Peyzaj" />
 
-  const [adminItems, setAdminItems] = useState([]);
-
-  useEffect(() => {
-    const saved = localStorage.getItem('topcuoglu_gallery');
-    if (saved) {
-      setAdminItems(JSON.parse(saved));
-    }
-  }, []);
-
-  const allServices = [...adminItems, ...defaultServices];
-
-  return (
-    <div className="min-h-screen bg-[#111813] text-white">
-      {/* Üst Bilgilendirme / Başlık Alanı */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto text-center">
-        <p className="text-sm text-amber-500 uppercase tracking-wider font-medium mb-2">
-          Peyzaj düzenlemeden ilaçlamaya, kanalizasyondan ofis temizliğine kadar on ayrı hizmeti aynı ekiple, aynı standartta yürütüyoruz.
-        </p>
-      </section>
-
-      {/* ANA SAYFA HİZMETLER BÖLÜMÜ: "Tüm Hizmetler" sayfası ile birebir aynı 3'lü simetrik yatay düzen */}
-      <section className="pb-16 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
-          {allServices.map((service, index) => (
-            <div 
-              key={index} 
-              className="group relative overflow-hidden rounded-xl shadow-lg bg-zinc-900 aspect-[16/10] w-full border border-zinc-800/40"
-            >
-              <img 
-                src={service.image} 
-                alt={service.title} 
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-end">
-                <span className="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">
-                  {service.category}
-                </span>
-                <h3 className="font-bold text-white text-lg md:text-xl">
-                  {service.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
-      </section>
-    </div>
-  );
-}
+    <!-- Mobil Cihazlar İçin Optimizasyon -->
+    <meta name="format-detection" content="telephone=yes" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
