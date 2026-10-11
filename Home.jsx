@@ -26,35 +26,60 @@ export default function Home() {
   const allServices = [...adminItems, ...defaultServices];
 
   return (
-    <div className="min-h-screen bg-[#111813] text-white">
+    <div style={{ minHeight: '100vh', backgroundColor: '#111813', color: '#ffffff' }}>
       {/* Üst Bilgilendirme Alanı */}
-      <section className="py-12 px-4 md:px-8 max-w-7xl mx-auto text-center">
-        <h1 className="text-3xl md:text-5xl font-bold mb-4 tracking-tight">
-          Topçuoğlu Peyzaj <span className="text-amber-400">& Tasarım</span>
+      <section style={{ padding: '48px 16px', maxWidth: '1280px', margin: '0 auto', textAlign: 'center' }}>
+        <h1 style={{ fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '16px', letterSpacing: '-0.025em' }}>
+          Topçuoğlu Peyzaj <span style={{ color: '#fbbf24' }}>& Tasarım</span>
         </h1>
-        <p className="text-sm md:text-base text-amber-500 uppercase tracking-wider font-medium max-w-3xl mx-auto">
+        <p style={{ fontSize: '1rem', color: '#f59e0b', textTransform: 'uppercase', fontWeight: 500, maxWidth: '768px', margin: '0 auto' }}>
           Peyzaj düzenlemeden ilaçlamaya, kanalizasyondan ofis temizliğine kadar on ayrı hizmeti aynı ekiple, aynı standartta yürütüyoruz.
         </p>
       </section>
 
-      {/* Kusursuz 3'lü Yatay Hizmetler Grid Yapısı */}
-      <section className="pb-16 px-4 md:px-8 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 w-full">
+      {/* TÜM KUTULARI KESİN OLARAK EŞİT YATAY NİZAMA KİLİTEYEN YAPI */}
+      <section style={{ paddingBottom: '64px', paddingLeft: '16px', paddingRight: '16px', maxWidth: '1280px', margin: '0 auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, minmax(0, 1fr))', gap: '24px', width: '100%' }}>
           {allServices.map((hizmet, index) => (
             <div 
               key={index} 
-              className="group relative overflow-hidden rounded-xl shadow-lg bg-zinc-900 aspect-[16/10] w-full border border-zinc-800/40"
+              style={{ 
+                position: 'relative', 
+                overflow: 'hidden', 
+                borderRadius: '12px', 
+                boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.1)', 
+                backgroundColor: '#18181b', 
+                aspectRatio: '16 / 10', 
+                width: '100%',
+                border: '1px solid rgba(39, 39, 42, 0.4)'
+              }}
             >
               <img 
                 src={hizmet.resim} 
                 alt={hizmet.başlığı} 
-                className="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                style={{ 
+                  position: 'absolute', 
+                  top: 0, 
+                  left: 0, 
+                  width: '100%', 
+                  height: '100%', 
+                  objectFit: 'cover', 
+                  objectPosition: 'center' 
+                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/40 to-transparent p-5 flex flex-col justify-end">
-                <span className="text-xs text-amber-400 font-semibold uppercase tracking-wider mb-1">
+              <div style={{ 
+                position: 'absolute', 
+                inset: 0, 
+                background: 'linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.4), transparent)', 
+                padding: '20px', 
+                display: 'flex', 
+                flexDirection: 'column', 
+                justifyContent: 'flex-end' 
+              }}>
+                <span style={{ fontSize: '12px', color: '#fbbf24', fontWeight: 600, textTransform: 'uppercase', marginBottom: '4px' }}>
                   {hizmet.kategorisi}
                 </span>
-                <h3 className="font-bold text-white text-lg md:text-xl">
+                <h3 style={{ fontWeight: 'bold', color: '#ffffff', fontSize: '1.125rem', margin: 0 }}>
                   {hizmet.başlığı}
                 </h3>
               </div>
