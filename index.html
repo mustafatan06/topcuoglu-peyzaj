@@ -70,7 +70,7 @@
             border-radius: 30px;
             font-size: 13px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -79,8 +79,8 @@
         .stage {
             width: 100%;
             max-width: 450px;
-            height: 220px;
-            margin: 10px auto 15px auto;
+            height: 250px;
+            margin: 5px auto 10px auto;
             position: relative;
         }
 
@@ -90,7 +90,7 @@
             overflow: visible;
         }
 
-        /* --- DÖNGÜ ANİMASYONLARI (Kapsamlı Evreler) --- */
+        /* --- DÖNGÜ ANİMASYONLARI (Kapsamlı Evreler - Tam Zemin Üzerinde) --- */
         
         /* 1. Aşama: Tohum */
         .stage-seed {
@@ -135,7 +135,7 @@
             font-size: 16px;
             color: #94a3b8;
             line-height: 1.6;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             max-width: 600px;
         }
 
@@ -143,7 +143,7 @@
             font-size: 14px;
             color: #facc15;
             font-style: italic;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             letter-spacing: 0.5px;
         }
 
@@ -156,7 +156,7 @@
             border-radius: 16px;
             width: 100%;
             max-width: 650px;
-            margin-top: 10px;
+            margin-top: 5px;
         }
 
         .agency-title {
@@ -205,28 +205,28 @@
 
         <!-- ORTA KISIMDAKİ ZEMİN VE DÖNGÜSEL AĞAÇ ANİMASYONU -->
         <div class="stage">
-            <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMax meet">
-                <!-- Şık Yeşil Çizgi / Zemin -->
-                <path d="M 50 170 Q 200 160 350 170" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path d="M 100 168 L 105 160 L 110 168" stroke="#22c55e" stroke-width="2" fill="none"/>
-                <path d="M 280 169 L 285 161 L 290 169" stroke="#22c55e" stroke-width="2" fill="none"/>
-                <path d="M 195 168 L 200 158 L 205 168" stroke="#22c55e" stroke-width="2" fill="none"/>
+            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMax meet">
+                <!-- Şık Yeşil Çizgi / Zemin (Y koordinatı 180) -->
+                <path d="M 50 180 Q 200 170 350 180" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
+                <path d="M 100 178 L 105 170 L 110 178" stroke="#22c55e" stroke-width="2" fill="none"/>
+                <path d="M 280 179 L 285 171 L 290 179" stroke="#22c55e" stroke-width="2" fill="none"/>
+                <path d="M 195 178 L 200 168 L 205 178" stroke="#22c55e" stroke-width="2" fill="none"/>
 
-                <!-- 1. EVRE: TOHUM -->
-                <g class="stage-seed" transform="translate(200, 162)">
+                <!-- 1. EVRE: TOHUM (Zemin Üstü Y: 180) -->
+                <g class="stage-seed" transform="translate(200, 175)">
                     <ellipse cx="0" cy="0" rx="7" ry="4" fill="#b45309" />
                     <path d="M -7 0 Q -12 -8 -8 -12" stroke="#b45309" stroke-width="2" fill="none"/>
                 </g>
 
                 <!-- 2. EVRE: FİDAN -->
-                <g class="stage-sapling" transform="translate(200, 167)">
+                <g class="stage-sapling" transform="translate(200, 180)">
                     <path d="M 0 0 L 0 -45" stroke="#9a3412" stroke-width="4" stroke-linecap="round"/>
                     <path d="M 0 -30 C -12 -40 -18 -22 -5 -18" fill="#22c55e"/>
                     <path d="M 0 -22 C 12 -32 18 -14 5 -10" fill="#16a34a"/>
                 </g>
 
                 <!-- 3. EVRE: BÜYÜK AĞAÇ & YAPRAKLAR -->
-                <g class="stage-tree" transform="translate(200, 170)">
+                <g class="stage-tree" transform="translate(200, 180)">
                     <!-- Kalın Gövde -->
                     <path d="M 0 0 L 0 -115" stroke="#78350f" stroke-width="12" stroke-linecap="round"/>
                     <path d="M -5 -70 C -22 -85 -22 -50 -10 -40" stroke="#78350f" stroke-width="5" fill="none"/>
@@ -240,7 +240,7 @@
                 </g>
 
                 <!-- 4. EVRE: ÇİÇEKLER VE KIRMIZI MEYVELER (Meyve Ağacı) -->
-                <g class="stage-fruits" transform="translate(200, 170)">
+                <g class="stage-fruits" transform="translate(200, 180)">
                     <!-- Aynı Büyük Ağaç Arka Planı -->
                     <path d="M 0 0 L 0 -115" stroke="#78350f" stroke-width="12" stroke-linecap="round"/>
                     <circle cx="0" cy="-125" r="48" fill="#15803d" />
@@ -271,7 +271,7 @@
         <div class="agency-box">
             <div class="agency-title">Bu site <span>Tan Medya Tasarım</span> tarafından kurulmuştur ve yönetilmektedir.</div>
             <div class="contact-info">
-                <div>📞 <a href="tel:05010901722">0601 090 17 22</a></div>
+                <div>📞 <a href="tel:05010901722">0501 090 17 22</a></div>
                 <div>🌐 <a href="https://www.tanmedyatasarim.com" target="_blank">www.tanmedyatasarim.com</a></div>
             </div>
         </div>
