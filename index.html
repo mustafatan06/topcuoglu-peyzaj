@@ -60,7 +60,22 @@
             letter-spacing: 1px;
         }
 
-        /* --- DÖNGÜSEL BÜYÜME ANİMASYONU SAHNESİ --- */
+        /* --- AÇIKLAMA METİNLERİ --- */
+        .badge {
+            display: inline-block;
+            background: rgba(74, 222, 128, 0.15);
+            color: #4ade80;
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- ORTA KISIMDAKİ ZEMİN VE AĞAÇ ANİMASYONU SAHNESİ --- */
         .stage {
             width: 100%;
             max-width: 450px;
@@ -114,21 +129,6 @@
             0%, 60% { opacity: 0; transform: scale(0); }
             65%, 90% { opacity: 1; transform: scale(1); }
             95%, 100% { opacity: 0; transform: scale(0); }
-        }
-
-        /* --- AÇIKLAMA METİNLERİ --- */
-        .badge {
-            display: inline-block;
-            background: rgba(74, 222, 128, 0.15);
-            color: #4ade80;
-            border: 1px solid rgba(74, 222, 128, 0.3);
-            padding: 6px 18px;
-            border-radius: 30px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         p {
@@ -203,10 +203,10 @@
 
         <div class="badge">Sistem Güncellemesi & Bakım Modu</div>
 
-        <!-- DÖNGÜSEL BÜYÜME VE MEYVE AĞACI ANİMASYONU (Zemine Tam Oturtulmuş) -->
+        <!-- ORTA KISIMDAKİ ZEMİN VE DÖNGÜSEL AĞAÇ ANİMASYONU -->
         <div class="stage">
             <svg viewBox="0 0 400 200" preserveAspectRatio="xMidYMax meet">
-                <!-- Toprak Çizgisi ve Çimler (Zemin) -->
+                <!-- Şık Yeşil Çizgi / Zemin -->
                 <path d="M 50 170 Q 200 160 350 170" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
                 <path d="M 100 168 L 105 160 L 110 168" stroke="#22c55e" stroke-width="2" fill="none"/>
                 <path d="M 280 169 L 285 161 L 290 169" stroke="#22c55e" stroke-width="2" fill="none"/>
