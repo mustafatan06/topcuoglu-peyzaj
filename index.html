@@ -13,7 +13,7 @@
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #08110e;
+            background-color: #060e0b;
             color: #e2e8f0;
             min-height: 100vh;
             display: flex;
@@ -28,7 +28,7 @@
         .container {
             max-width: 850px;
             margin: auto;
-            padding: 30px 20px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -53,118 +53,147 @@
         }
 
         .subtitle {
-            font-size: 20px;
+            font-size: 19px;
             color: #4ade80;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             letter-spacing: 1px;
         }
 
-        /* --- AÇIKLAMA METİNLERİ --- */
         .badge {
             display: inline-block;
             background: rgba(74, 222, 128, 0.15);
             color: #4ade80;
             border: 1px solid rgba(74, 222, 128, 0.3);
-            padding: 6px 18px;
+            padding: 5px 16px;
             border-radius: 30px;
-            font-size: 13px;
+            font-size: 12px;
             font-weight: 600;
             margin-bottom: 10px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* --- ORTA KISIMDAKİ ZEMİN VE AĞAÇ ANİMASYONU SAHNESİ --- */
+        /* --- MODERN PEYZAJ / MANDALA ANİMASYON SAHNESİ --- */
         .stage {
             width: 100%;
-            max-width: 450px;
-            height: 250px;
-            margin: 5px auto 10px auto;
+            max-width: 320px;
+            height: 220px;
+            margin: 5px auto;
             position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        svg {
-            width: 100%;
-            height: 100%;
-            overflow: visible;
+        /* Büyüleyici Dönen Peyzaj Çarkı */
+        .landscape-mandala {
+            width: 160px;
+            height: 160px;
+            position: relative;
+            animation: rotateMandala 20s linear infinite;
         }
 
-        /* --- DÖNGÜ ANİMASYONLARI (Kapsamlı Evreler - Tam Zemin Üzerinde) --- */
-        
-        /* 1. Aşama: Tohum */
-        .stage-seed {
-            animation: cycleSeed 14s infinite;
-        }
-        @keyframes cycleSeed {
-            0%, 15% { opacity: 1; transform: scale(1); }
-            20%, 100% { opacity: 0; transform: scale(0.5); }
+        @keyframes rotateMandala {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
 
-        /* 2. Aşama: Fidan */
-        .stage-sapling {
-            animation: cycleSapling 14s infinite;
-        }
-        @keyframes cycleSapling {
-            0%, 15% { opacity: 0; transform: scale(0.5); }
-            20%, 35% { opacity: 1; transform: scale(1); }
-            40%, 100% { opacity: 0; transform: scale(0.5); }
-        }
-
-        /* 3. Aşama: Büyük Ağaç & Yapraklar */
-        .stage-tree {
-            animation: cycleTree 14s infinite;
-        }
-        @keyframes cycleTree {
-            0%, 35% { opacity: 0; transform: scale(0.8); }
-            40%, 75% { opacity: 1; transform: scale(1); }
-            80%, 100% { opacity: 0; transform: scale(0.9); }
+        /* Yaprak / Taç Yaprak Halkaları */
+        .petal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 45px;
+            height: 90px;
+            background: linear-gradient(to top, #166534, #4ade80);
+            border-radius: 50% 50% 20% 20%;
+            transform-origin: bottom center;
+            opacity: 0.85;
+            box-shadow: 0 0 15px rgba(74, 222, 128, 0.3);
         }
 
-        /* 4. Aşama: Çiçekler ve Kırmızı Meyveler */
-        .stage-fruits {
-            animation: cycleFruits 14s infinite;
+        /* 8 Yönlü Simetrik Yerleşim */
+        .petal:nth-child(1) { transform: translate(-50%, -100%) rotate(0deg); }
+        .petal:nth-child(2) { transform: translate(-50%, -100%) rotate(45deg); background: linear-gradient(to top, #15803d, #86efac); }
+        .petal:nth-child(3) { transform: translate(-50%, -100%) rotate(90deg); }
+        .petal:nth-child(4) { transform: translate(-50%, -100%) rotate(135deg); background: linear-gradient(to top, #15803d, #86efac); }
+        .petal:nth-child(5) { transform: translate(-50%, -100%) rotate(180deg); }
+        .petal:nth-child(6) { transform: translate(-50%, -100%) rotate(225deg); background: linear-gradient(to top, #15803d, #86efac); }
+        .petal:nth-child(7) { transform: translate(-50%, -100%) rotate(270deg); }
+        .petal:nth-child(8) { transform: translate(-50%, -100%) rotate(315deg); background: linear-gradient(to top, #15803d, #86efac); }
+
+        /* Merkezdeki Işıltılı Doğa Çekirdeği */
+        .mandala-core {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, #facc15 0%, #ca8a04 100%);
+            border-radius: 50%;
+            box-shadow: 0 0 25px #facc15;
+            animation: pulseCore 3s ease-in-out infinite;
+            z-index: 5;
         }
-        @keyframes cycleFruits {
-            0%, 60% { opacity: 0; transform: scale(0); }
-            65%, 90% { opacity: 1; transform: scale(1); }
-            95%, 100% { opacity: 0; transform: scale(0); }
+
+        @keyframes pulseCore {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); box-shadow: 0 0 20px #facc15; }
+            50% { transform: translate(-50%, -50%) scale(1.15); box-shadow: 0 0 35px #4ade80; }
+        }
+
+        /* Çevrede Dönen Su / Enerji Halkası */
+        .orbit-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 200px;
+            border: 2px dashed rgba(74, 222, 128, 0.4);
+            border-radius: 50%;
+            animation: rotateRing 12s linear infinite reverse;
+        }
+
+        @keyframes rotateRing {
+            0% { transform: translate(-50%, -50%) rotate(0deg); }
+            100% { transform: translate(-50%, -50%) rotate(360deg); }
         }
 
         p {
-            font-size: 16px;
+            font-size: 15px;
             color: #94a3b8;
-            line-height: 1.6;
-            margin-bottom: 8px;
-            max-width: 600px;
+            line-height: 1.5;
+            margin-bottom: 6px;
+            max-width: 580px;
         }
 
         .process-note {
-            font-size: 14px;
+            font-size: 13px;
             color: #facc15;
             font-style: italic;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             letter-spacing: 0.5px;
         }
 
-        /* --- TAN MEDYA TASARIM İMZA ALANI (BÜYÜK & HAVALI) --- */
+        /* --- TAN MEDYA TASARIM İMZA KUTUSU --- */
         .agency-box {
-            background: rgba(15, 23, 42, 0.8);
+            background: rgba(15, 23, 42, 0.85);
             border: 1px solid rgba(56, 189, 248, 0.3);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            padding: 20px 30px;
-            border-radius: 16px;
+            padding: 15px 25px;
+            border-radius: 14px;
             width: 100%;
-            max-width: 650px;
+            max-width: 600px;
             margin-top: 5px;
         }
 
         .agency-title {
-            font-size: 18px;
+            font-size: 17px;
             font-weight: 700;
             color: #f8fafc;
-            margin-bottom: 8px;
-            letter-spacing: 0.5px;
+            margin-bottom: 6px;
         }
 
         .agency-title span {
@@ -174,11 +203,11 @@
         .contact-info {
             display: flex;
             justify-content: center;
-            gap: 25px;
+            gap: 20px;
             flex-wrap: wrap;
-            font-size: 15px;
+            font-size: 14px;
             color: #cbd5e1;
-            margin-top: 10px;
+            margin-top: 8px;
         }
 
         .contact-info a {
@@ -203,65 +232,20 @@
 
         <div class="badge">Sistem Güncellemesi & Bakım Modu</div>
 
-        <!-- ORTA KISIMDAKİ ZEMİN VE DÖNGÜSEL AĞAÇ ANİMASYONU -->
+        <!-- MODERN DÖNEN PEYZAJ / DOĞA MANDALA ANİMASYONU -->
         <div class="stage">
-            <svg viewBox="0 0 400 220" preserveAspectRatio="xMidYMax meet">
-                <!-- Şık Yeşil Çizgi / Zemin (Y koordinatı 180) -->
-                <path d="M 50 180 Q 200 170 350 180" stroke="#166534" stroke-width="5" fill="none" stroke-linecap="round"/>
-                <path d="M 100 178 L 105 170 L 110 178" stroke="#22c55e" stroke-width="2" fill="none"/>
-                <path d="M 280 179 L 285 171 L 290 179" stroke="#22c55e" stroke-width="2" fill="none"/>
-                <path d="M 195 178 L 200 168 L 205 178" stroke="#22c55e" stroke-width="2" fill="none"/>
-
-                <!-- 1. EVRE: TOHUM (Zemin Üstü Y: 180) -->
-                <g class="stage-seed" transform="translate(200, 175)">
-                    <ellipse cx="0" cy="0" rx="7" ry="4" fill="#b45309" />
-                    <path d="M -7 0 Q -12 -8 -8 -12" stroke="#b45309" stroke-width="2" fill="none"/>
-                </g>
-
-                <!-- 2. EVRE: FİDAN -->
-                <g class="stage-sapling" transform="translate(200, 180)">
-                    <path d="M 0 0 L 0 -45" stroke="#9a3412" stroke-width="4" stroke-linecap="round"/>
-                    <path d="M 0 -30 C -12 -40 -18 -22 -5 -18" fill="#22c55e"/>
-                    <path d="M 0 -22 C 12 -32 18 -14 5 -10" fill="#16a34a"/>
-                </g>
-
-                <!-- 3. EVRE: BÜYÜK AĞAÇ & YAPRAKLAR -->
-                <g class="stage-tree" transform="translate(200, 180)">
-                    <!-- Kalın Gövde -->
-                    <path d="M 0 0 L 0 -115" stroke="#78350f" stroke-width="12" stroke-linecap="round"/>
-                    <path d="M -5 -70 C -22 -85 -22 -50 -10 -40" stroke="#78350f" stroke-width="5" fill="none"/>
-                    <path d="M 5 -85 C 22 -100 22 -65 10 -55" stroke="#78350f" stroke-width="5" fill="none"/>
-                    
-                    <!-- Yoğun Ağaç Yaprakları (Yeşil Katmanlar) -->
-                    <circle cx="0" cy="-125" r="48" fill="#15803d" />
-                    <circle cx="-30" cy="-105" r="35" fill="#16a34a" />
-                    <circle cx="30" cy="-105" r="35" fill="#22c55e" />
-                    <circle cx="0" cy="-90" r="40" fill="#4ade80" opacity="0.85"/>
-                </g>
-
-                <!-- 4. EVRE: ÇİÇEKLER VE KIRMIZI MEYVELER (Meyve Ağacı) -->
-                <g class="stage-fruits" transform="translate(200, 180)">
-                    <!-- Aynı Büyük Ağaç Arka Planı -->
-                    <path d="M 0 0 L 0 -115" stroke="#78350f" stroke-width="12" stroke-linecap="round"/>
-                    <circle cx="0" cy="-125" r="48" fill="#15803d" />
-                    <circle cx="-30" cy="-105" r="35" fill="#16a34a" />
-                    <circle cx="30" cy="-105" r="35" fill="#22c55e" />
-                    <circle cx="0" cy="-90" r="40" fill="#4ade80" opacity="0.85"/>
-
-                    <!-- Beyaz Çiçekler / Tacı -->
-                    <circle cx="-18" cy="-135" r="5" fill="#ffffff" />
-                    <circle cx="22" cy="-120" r="5" fill="#ffffff" />
-                    <circle cx="-35" cy="-95" r="5" fill="#ffffff" />
-                    <circle cx="38" cy="-110" r="5" fill="#ffffff" />
-
-                    <!-- Tatlı Kırmızı Meyveler (Elma / Meyve Ağacı) -->
-                    <circle cx="-12" cy="-110" r="7" fill="#ef4444" />
-                    <circle cx="12" cy="-130" r="7" fill="#ef4444" />
-                    <circle cx="-25" cy="-80" r="7" fill="#ef4444" />
-                    <circle cx="25" cy="-90" r="7" fill="#ef4444" />
-                    <circle cx="4" cy="-100" r="7" fill="#ef4444" />
-                </g>
-            </svg>
+            <div class="orbit-ring"></div>
+            <div class="landscape-mandala">
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+                <div class="petal"></div>
+            </div>
+            <div class="mandala-core"></div>
         </div>
 
         <p>Sizleri daha kusursuz ve yeşil bir dijital deneyimle buluşturabilmek adına altyapı güncellemeleri gerçekleştiriyoruz. Beklettiğimiz için özür dileriz, çok yakında yayındayız!</p>
